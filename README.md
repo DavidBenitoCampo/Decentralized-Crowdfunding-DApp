@@ -27,7 +27,7 @@ A fully functional decentralized crowdfunding application built on Ethereum, fea
 
 ## 🎯 Overview
 
-This project demonstrates my proficiency in **blockchain development** by implementing a trustless crowdfunding mechanism where:
+A learning project exploring **blockchain development** by implementing a trustless crowdfunding mechanism where:
 
 - Users can **contribute ETH** to a shared funding pool
 - Funds are **automatically released** to a recipient when a threshold is met
