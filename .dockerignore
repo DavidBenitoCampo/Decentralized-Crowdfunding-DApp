@@ -1,0 +1,42 @@
+# Dependencies
+node_modules
+**/node_modules
+
+# Build outputs
+.next
+out
+build
+dist
+
+# Development
+.git
+.gitignore
+*.md
+!README.md
+
+# IDE
+.vscode
+.idea
+.cursor
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Cache
+.cache
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Hardhat
+packages/hardhat/cache
+packages/hardhat/artifacts
+packages/hardhat/deployments/localhost
+
+# Yarn
+.yarn/cache
+.yarn/install-state.gz

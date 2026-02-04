@@ -1,0 +1,21 @@
+services:
+  # All-in-one development container
+  dev:
+    build:
+      context: .
+      target: development
+    container_name: crowdfund-dev
+    command: sh -c "yarn chain & sleep 5 && yarn deploy --network hardhat && yarn start"
+    ports:
+      - "3000:3000"
+      - "8545:8545"
+    volumes:
+      - ./packages/hardhat/contracts:/app/packages/hardhat/contracts
+      - ./packages/hardhat/deploy:/app/packages/hardhat/deploy
+      - ./packages/nextjs:/app/packages/nextjs
+      - nextjs_node_modules:/app/packages/nextjs/node_modules
+    stdin_open: true
+    tty: true
+
+volumes:
+  nextjs_node_modules:

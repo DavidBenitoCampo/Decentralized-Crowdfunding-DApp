@@ -9,26 +9,39 @@ contract CrowdFund {
     /// Errors //////
     /////////////////
 
-    // Errors go here...
+	error NotOpenToWithdraw();
+	error WithdrawTransferFailed(address to, uint256 amount);
+	error TooEarly(uint256 deadline, uint256 currentTimestamp);
+	error AlreadyCompleted();
 
     //////////////////////
     /// State Variables //
     //////////////////////
 
+	bool public openToWithdraw;
+	uint256 public deadline = block.timestamp + 30 seconds;
+	uint256 public constant threshold = 1 ether;
+
     FundingRecipient public fundingRecipient;
+	// Track individual balances
+	mapping(address => uint256) public balances;
+
 
     ////////////////
     /// Events /////
     ////////////////
 
-    // Events go here...
+    event Contribution(address indexed contributor, uint256 amount);
 
     ///////////////////
     /// Modifiers /////
     ///////////////////
 
     modifier notCompleted() {
-        _;
+    	if (fundingRecipient.completed()) {
+			revert AlreadyCompleted();
+			}
+		_;
     }
 
     ///////////////////
@@ -43,19 +56,58 @@ contract CrowdFund {
     /// Functions /////
     ///////////////////
 
-    function contribute() public payable {}
+    function contribute() public payable notCompleted {
+		// 1. Update the balance of the sender
+		balances[msg.sender] += msg.value;
+		// 2. Emit the event (using the names we discussed)
+		emit Contribution(msg.sender, msg.value);
+	}
+	
+	function withdraw() public notCompleted {
+    // 1. Check if the contract state allows withdrawal
+    	if (!openToWithdraw) {
+        	revert NotOpenToWithdraw();
+    	}
 
-    function withdraw() public {}
+    // 2. Identify how much this specific user contributed
+    	uint256 amount = balances[msg.sender];
 
-    function execute() public {}
+    // 3. Reset the balance to 0 (Checks-Effects-Interactions pattern)
+    	balances[msg.sender] = 0;
 
-    receive() external payable {}
+    // 4. Transfer the ETH back to the user
+    	(bool success, ) = msg.sender.call{value: amount}("");
+
+    // 5. If the transfer fails, revert the whole transaction
+    	if (!success) {
+        	revert WithdrawTransferFailed(msg.sender, amount);
+    	}
+	}
+
+    function execute() public notCompleted {
+		if (block.timestamp < deadline) {
+			revert TooEarly(deadline, block.timestamp);
+		}
+
+		if (address(this).balance >= threshold) {
+			fundingRecipient.complete{value: address(this).balance}();
+		} else {
+			openToWithdraw = true; 
+		}
+	}
+
+    receive() external payable {
+		contribute();
+	}
 
     ////////////////////////
     /// View Functions /////
     ////////////////////////
 
     function timeLeft() public view returns (uint256) {
-        return 0;
+    	if (block.timestamp >= deadline) {
+			return 0;	
+		}
+		return deadline - block.timestamp;
     }
 }
