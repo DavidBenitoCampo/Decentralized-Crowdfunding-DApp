@@ -257,6 +257,42 @@ yarn vercel --prod
 
 ---
 
+## 🔄 CI/CD Pipeline
+
+This project includes automated CI/CD using GitHub Actions.
+
+![CI](https://github.com/DavidBenitoCampo/Decentralized-Crowdfunding-DApp/actions/workflows/ci.yml/badge.svg)
+![Deploy](https://github.com/DavidBenitoCampo/Decentralized-Crowdfunding-DApp/actions/workflows/deploy.yml/badge.svg)
+
+### Workflows
+
+| Workflow | Trigger | Description |
+|----------|---------|-------------|
+| **CI** | Push/PR to main | Lint, type check, test contracts, build frontend, security audit |
+| **Deploy** | Push to main / Manual | Auto-deploy frontend to Vercel; manual contract deployment to Sepolia |
+
+### Required Secrets
+
+Configure these in GitHub → Settings → Secrets and variables → Actions:
+
+| Secret | Description |
+|--------|-------------|
+| `VERCEL_TOKEN` | Vercel API token |
+| `VERCEL_ORG_ID` | Vercel organization ID |
+| `VERCEL_PROJECT_ID` | Vercel project ID |
+| `DEPLOYER_PRIVATE_KEY` | Wallet private key for contract deployment |
+| `SEPOLIA_RPC_URL` | Sepolia RPC endpoint (Alchemy/Infura) |
+| `ETHERSCAN_API_KEY` | For contract verification |
+| `SLACK_WEBHOOK_URL` | *(Optional)* Slack notifications |
+
+### Manual Contract Deployment
+
+1. Go to **Actions** → **Deploy** → **Run workflow**
+2. Check "Deploy smart contracts to Sepolia"
+3. Click **Run workflow**
+
+---
+
 ## 📚 What I Learned
 
 Through this project, I gained hands-on experience with:
@@ -266,6 +302,7 @@ Through this project, I gained hands-on experience with:
 - **Web3 Integration**: Connecting frontends to smart contracts using modern tooling
 - **Security Patterns**: Implementing CEI pattern and custom error handling
 - **Deployment Pipeline**: End-to-end deployment to testnets and Vercel
+- **CI/CD**: Automated testing and deployment with GitHub Actions
 
 ---
 
