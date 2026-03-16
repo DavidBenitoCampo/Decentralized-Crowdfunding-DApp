@@ -3285,6 +3285,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@rainbow-me/rainbowkit@npm:2.2.10":
+  version: 2.2.10
+  resolution: "@rainbow-me/rainbowkit@npm:2.2.10"
+  dependencies:
+    "@vanilla-extract/css": 1.17.3
+    "@vanilla-extract/dynamic": 2.1.4
+    "@vanilla-extract/sprinkles": 1.6.4
+    clsx: 2.1.1
+    cuer: 0.0.3
+    react-remove-scroll: 2.6.2
+    ua-parser-js: ^1.0.37
+  peerDependencies:
+    "@tanstack/react-query": ">=5.0.0"
+    react: ">=18"
+    react-dom: ">=18"
+    viem: 2.x
+    wagmi: ^2.9.0
+  checksum: 3f8842f93791fe8bc9d3d11f43b4ab0c2ca7fed0978dacd47df082f70c044af609f93d2addd4e77b0c35bbd892f525a14c8415822c08402ee1a2490512034c61
+  languageName: node
+  linkType: hard
+
 "@rainbow-me/rainbowkit@npm:2.2.9":
   version: 2.2.9
   resolution: "@rainbow-me/rainbowkit@npm:2.2.9"
@@ -3493,44 +3514,44 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@scaffold-ui/components@npm:^0.1.7":
-  version: 0.1.8
-  resolution: "@scaffold-ui/components@npm:0.1.8"
+"@scaffold-ui/components@npm:^0.1.9":
+  version: 0.1.9
+  resolution: "@scaffold-ui/components@npm:0.1.9"
   peerDependencies:
-    "@scaffold-ui/hooks": 0.1.6
+    "@scaffold-ui/hooks": 0.1.7
     "@tanstack/react-query": ^5.59.15
     "@types/react": ^19.0.7
     react: ^19.2.3
     viem: ^2.23.0
     wagmi: ^2.14.11
-  checksum: b06b2ce96a5cece41dcb8b9a3da46370577f8a1f4d210342bd4e9bb95190a886fc0c45dea08e041cdeedc762e0d3a50cef4ebd952eec4fd44ddcd7a6800d3078
+  checksum: a51e49ed9d14c43a4a755ba6d522180545db8a3271509f7281e3a54a6469a99e57b6a59afe891294eeff01a3adebb3b20f983866098ee68bfe7843af83fdf2ef
   languageName: node
   linkType: hard
 
-"@scaffold-ui/debug-contracts@npm:^0.1.6":
-  version: 0.1.7
-  resolution: "@scaffold-ui/debug-contracts@npm:0.1.7"
+"@scaffold-ui/debug-contracts@npm:^0.1.8":
+  version: 0.1.8
+  resolution: "@scaffold-ui/debug-contracts@npm:0.1.8"
   dependencies:
     "@heroicons/react": ^2.2.0
     react-hot-toast: ^2.5.2
   peerDependencies:
-    "@scaffold-ui/components": 0.1.8
-    "@scaffold-ui/hooks": 0.1.6
+    "@scaffold-ui/components": 0.1.9
+    "@scaffold-ui/hooks": 0.1.7
     "@tanstack/react-query": ^5.59.15
     "@types/react": ^19.0.7
     react: ^19.2.3
     viem: ^2.23.0
     wagmi: ^2.14.11
-  checksum: 5353c0a3092ece7c7988a2c0ea0bfcf796dbc0f1f506d327503e75167d31f7d99fb059983f03dab51c91fee2ec86a0e351e75da36eea4ca9dc62a04736ac92cd
+  checksum: f5d6a607b6e954e2da765baec8fde178e52fb25f72603b196f73706457212b004f082aea976000f19fb2755968115c8b6cf215c103a297a3d0fe4419d72fbb35
   languageName: node
   linkType: hard
 
-"@scaffold-ui/hooks@npm:^0.1.5":
-  version: 0.1.6
-  resolution: "@scaffold-ui/hooks@npm:0.1.6"
+"@scaffold-ui/hooks@npm:^0.1.7":
+  version: 0.1.7
+  resolution: "@scaffold-ui/hooks@npm:0.1.7"
   dependencies:
     "@uniswap/sdk-core": ^7.7.2
-    "@uniswap/v2-sdk": ^4.15.2
+    "@uniswap/v2-sdk": 4.19.1
     blo: ^1.2.0
     usehooks-ts: ^3.1.1
   peerDependencies:
@@ -3539,7 +3560,7 @@ __metadata:
     react: ^19.2.3
     viem: ^2.23.0
     wagmi: ^2.14.11
-  checksum: 9b2b0146a33492b859b25f0d11951bd8236ec51555927306ded9b68ecea4a7055dc08f4aaf4479844b4544c1cbcbb7dbceacaa9b2538690219b5a0522624305f
+  checksum: c8c76ee06827842178b4f5ff4d477dbe9a2aa31fc40af2cc5a3e24f7d67a6142a87d62bfe3c87fbbcc013c235e05438778b8cc18a2bc5774c8d4d9a92650678a
   languageName: node
   linkType: hard
 
@@ -3688,11 +3709,11 @@ __metadata:
   resolution: "@se-2/nextjs@workspace:packages/nextjs"
   dependencies:
     "@heroicons/react": ~2.1.5
-    "@rainbow-me/rainbowkit": 2.2.9
+    "@rainbow-me/rainbowkit": 2.2.10
     "@react-native-async-storage/async-storage": ~2.2.0
-    "@scaffold-ui/components": ^0.1.7
-    "@scaffold-ui/debug-contracts": ^0.1.6
-    "@scaffold-ui/hooks": ^0.1.5
+    "@scaffold-ui/components": ^0.1.9
+    "@scaffold-ui/debug-contracts": ^0.1.8
+    "@scaffold-ui/hooks": ^0.1.7
     "@tailwindcss/postcss": 4.0.15
     "@tanstack/react-query": ~5.59.15
     "@trivago/prettier-plugin-sort-imports": ~4.3.0
@@ -3727,7 +3748,7 @@ __metadata:
     vercel: ~39.1.3
     viem: 2.39.0
     wagmi: 2.19.5
-    zustand: ~5.0.0
+    zustand: ~5.0.12
   languageName: unknown
   linkType: soft
 
@@ -5584,7 +5605,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uniswap/sdk-core@npm:^7.10.0, @uniswap/sdk-core@npm:^7.7.2":
+"@uniswap/sdk-core@npm:^7.12.1":
+  version: 7.12.2
+  resolution: "@uniswap/sdk-core@npm:7.12.2"
+  dependencies:
+    "@ethersproject/address": ^5.0.2
+    "@ethersproject/bytes": ^5.7.0
+    "@ethersproject/keccak256": 5.7.0
+    "@ethersproject/strings": 5.7.0
+    big.js: ^5.2.2
+    decimal.js-light: ^2.5.0
+    jsbi: ^3.1.4
+    tiny-invariant: ^1.1.0
+    toformat: ^2.0.0
+  checksum: 7986e298fdb779db06e416bdec72891577b3e8bf85e62d1fc6f3100ae24a6c0b8ff90f0c20fbef83453504bd070c4c221c59f28279e18d5fdeda9cec5372b69e
+  languageName: node
+  linkType: hard
+
+"@uniswap/sdk-core@npm:^7.7.2":
   version: 7.10.1
   resolution: "@uniswap/sdk-core@npm:7.10.1"
   dependencies:
@@ -5601,16 +5639,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uniswap/v2-sdk@npm:^4.15.2":
-  version: 4.17.0
-  resolution: "@uniswap/v2-sdk@npm:4.17.0"
+"@uniswap/v2-sdk@npm:4.19.1":
+  version: 4.19.1
+  resolution: "@uniswap/v2-sdk@npm:4.19.1"
   dependencies:
     "@ethersproject/address": ^5.0.2
     "@ethersproject/solidity": ^5.0.9
-    "@uniswap/sdk-core": ^7.10.0
+    "@uniswap/sdk-core": ^7.12.1
     tiny-invariant: ^1.1.0
     tiny-warning: ^1.0.3
-  checksum: 43dd7b2f7b03d40763ad7145654c91c3b590ddfd37d2c11dfc5ad80b1ab9642406ca49ecdc9b259a16582d7ee97a67f19493239d67415cd7c089fc3d9c070659
+  checksum: 032a62c4b017663cddd04029cbd2393298dbc3b44bc79cc5a8f27879dc664cfac58e696594839ebb11f138971c759e9db16f1e5cb99b107408156284060c2cc0
   languageName: node
   linkType: hard
 
@@ -19357,7 +19395,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zustand@npm:^5.0.1, zustand@npm:~5.0.0":
+"zustand@npm:^5.0.1":
   version: 5.0.11
   resolution: "zustand@npm:5.0.11"
   peerDependencies:
@@ -19375,5 +19413,26 @@ __metadata:
     use-sync-external-store:
       optional: true
   checksum: 88f315b5165433106a6935b1fa90cbe9baceba00f40d5797e877eca331b006a15426a7f1f35b692d959c5b7a17a2b84720d1c222d8d189cba424551a1fb80019
+  languageName: node
+  linkType: hard
+
+"zustand@npm:~5.0.12":
+  version: 5.0.12
+  resolution: "zustand@npm:5.0.12"
+  peerDependencies:
+    "@types/react": ">=18.0.0"
+    immer: ">=9.0.6"
+    react: ">=18.0.0"
+    use-sync-external-store: ">=1.2.0"
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    immer:
+      optional: true
+    react:
+      optional: true
+    use-sync-external-store:
+      optional: true
+  checksum: bf856f2d86912d46439b6e32004b32b77518af49dc23fdc1998457777d860183e0a677498731b61f3d38717b62283e08dd38d1fc3714385e84ba87ef9f5aa4c6
   languageName: node
   linkType: hard
